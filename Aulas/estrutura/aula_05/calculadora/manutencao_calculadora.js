@@ -63,7 +63,7 @@ class ManutencaoCalculadora extends Calculadora {
 
    limparCampos() {
       this.oCampos.form.reset();
-      this.oCampos.resultado.innerHTML = 'Resultado: ';
+      this.oCampos.resultado.innerHTML = 'Resultado: —';
    }
 
 }

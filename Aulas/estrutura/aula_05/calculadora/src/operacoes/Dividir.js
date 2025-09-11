@@ -6,7 +6,7 @@ export class Dividir {
     * @returns {int|float}
     */
    executar(a, b) {
-      if (b === 0) {
+      if (b == 0) {
          throw new Error("Divisão por zero.");
       }
 

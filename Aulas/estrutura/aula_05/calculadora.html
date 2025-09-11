@@ -1,65 +1,128 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Calculadora Básica (HTML + JS)</title>
-  <style>
-    body{font-family:Arial,Helvetica,sans-serif;background:#f4f6f8;color:#0b1220;padding:20px}
-    .wrap{max-width:520px;margin:0 auto;background:#fff;border-radius:8px;padding:18px;box-shadow:0 6px 18px rgba(2,6,23,0.08)}
-    h1{font-size:20px;margin:0 0 12px}
-    .row{display:flex;gap:12px;align-items:center;margin-bottom:10px}
-    label{font-weight:600;font-size:14px}
-    input[type="number"]{flex:1;padding:8px;border:1px solid #d9dbe0;border-radius:6px;font-size:14px}
-    select{padding:8px;border-radius:6px;border:1px solid #d9dbe0;background:white}
-    button{padding:10px 14px;border-radius:6px;border:0;cursor:pointer;font-weight:700}
-    .btn-calc{background:#2563eb;color:#fff}
-    .btn-clear{background:#eef2ff;color:#0b1220}
-    .result{margin-top:14px;padding:12px;border-radius:6px;text-align:center;font-weight:700;font-size:18px;min-height:44px;display:flex;align-items:center;justify-content:center}
-    .positive{background:#dcfce7;color:#065f46;border:1px solid #86efac}
-    .negative{background:#fee2e2;color:#7f1d1d;border:1px solid #fca5a5}
-    .zero{background:#f3f4f6;color:#374151;border:1px solid #e5e7eb}
-    .error{background:#fee2e2;color:#7f1d1d;border:1px solid #fca5a5}
-    .help{margin-top:8px;color:#6b7280;font-size:13px}
-  </style>
-</head>
-<body>
-  <div class="wrap">
-    <h1>Calculadora Básica</h1>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Calculadora Básica (HTML + JS)</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f4f6f8;
+        color: #0b1220;
+        padding: 20px;
+      }
+      .wrap {
+        max-width: 520px;
+        margin: 0 auto;
+        background: #fff;
+        border-radius: 8px;
+        padding: 18px;
+        box-shadow: 0 6px 18px rgba(2, 6, 23, 0.08);
+      }
+      h1 {
+        font-size: 20px;
+        margin: 0 0 12px;
+      }
+      .row {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      label {
+        font-weight: 600;
+        font-size: 14px;
+      }
+      input[type="number"] {
+        flex: 1;
+        padding: 8px;
+        border: 1px solid #d9dbe0;
+        border-radius: 6px;
+        font-size: 14px;
+      }
+      select {
+        padding: 8px;
+        border-radius: 6px;
+        border: 1px solid #d9dbe0;
+        background: white;
+      }
+      button {
+        padding: 10px 14px;
+        border-radius: 6px;
+        border: 0;
+        cursor: pointer;
+        font-weight: 700;
+      }
+      .btn-calc {
+        background: #2563eb;
+        color: #fff;
+      }
+      .btn-clear {
+        background: #eef2ff;
+        color: #0b1220;
+      }
+      .result {
+        margin-top: 14px;
+        padding: 12px;
+        border-radius: 6px;
+        text-align: center;
+        font-weight: 700;
+        font-size: 18px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>Calculadora Básica</h1>
 
-    <form id="calcForm">
-      <div class="row">
-        <label for="a">Valor A</label>
-        <input id="a" type="number" step="any" placeholder="Digite um número" required>
-      </div>
+      <form id="calcForm">
+        <div class="row">
+          <label for="a">Valor A</label>
+          <input
+            id="a"
+            type="number"
+            step="any"
+            placeholder="Digite um número"
+            required
+          />
+        </div>
 
-      <div class="row">
-        <label for="b">Valor B</label>
-        <input id="b" type="number" step="any" placeholder="Digite outro número" required>
-      </div>
+        <div class="row">
+          <label for="b">Valor B</label>
+          <input
+            id="b"
+            type="number"
+            step="any"
+            placeholder="Digite outro número"
+            required
+          />
+        </div>
 
-      <div class="row">
-        <label for="op">Operação</label>
-        <select id="op" aria-label="Operação">
-          <option value="+">Somar (+)</option>
-          <option value="-">Subtrair (-)</option>
-          <option value="*">Multiplicar (×)</option>
-          <option value="/">Dividir (÷)</option>
-        </select>
-      </div>
+        <div class="row">
+          <label for="op">Operação</label>
+          <select id="op" aria-label="Operação">
+            <option value="+">Somar (+)</option>
+            <option value="-">Subtrair (-)</option>
+            <option value="*">Multiplicar (×)</option>
+            <option value="/">Dividir (÷)</option>
+          </select>
+        </div>
 
-      <div class="row">
-        <button type="button" id="calc" class="btn-calc">Calcular</button>
-        <button type="button" id="clear" class="btn-clear">Limpar</button>
-      </div>
+        <div class="row">
+          <button type="button" id="calc" class="btn-calc">Calcular</button>
+          <button type="button" id="clear" class="btn-clear">Limpar</button>
+        </div>
 
-      <div id="result" class="result zero" role="status" aria-live="polite">Resultado: —</div>
+        <div id="result" class="result zero" role="status" aria-live="polite">
+          Resultado: —
+        </div>
+      </form>
+    </div>
+  </body>
 
-      <div class="help">Regras: se o resultado for negativo, o fundo ficará vermelho; se positivo, verde; se for zero, cinza.</div>
-    </form>
-  </div>
-</body>
-
-<script type="module" src="./calculadora/manutencao_calculadora.js"></script>
-
+  <script type="module" src="./calculadora/manutencao_calculadora.js"></script>
 </html>
